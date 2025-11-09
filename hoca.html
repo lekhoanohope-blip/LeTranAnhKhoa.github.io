@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Hồ cá sinh động</title>
+  <link rel="stylesheet"  href="những thứ lung tung của hồ cá.css">
+</head>
+<body>
+  <!-- Các hình cá -->
+  <img src="diver1.png" class="fish" alt="Cá 1">
+  <img src="diver2.png" class="fish" alt="Cá 2">
+  <img src="diver3.png" class="fish" alt="Cá 3">
+  <img src="faintSchool.png" class="fish" alt="Cá 4">
+  <img src="goldFishSchool.png" class="fish" alt="Cá 5">
+  <img src="shark.png" class="fish" alt="Cá 6">
+  <img src="turtle.png" class="fish" alt="Cá 7">
+
+  <div class="info-box" id="infoBox"></div>
+
+  <script>
+    // Tạo bong bóng nổi tự động
+    for (let i = 0; i < 25; i++) {
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      bubble.style.left = Math.random() * 100 + 'vw';
+      bubble.style.animationDuration = 5 + Math.random() * 5 + 's';
+      bubble.style.width = bubble.style.height = 5 + Math.random() * 15 + 'px';
+      document.body.appendChild(bubble);
+    }
+    // Chuyển động cá
+    const fishes = document.querySelectorAll('.fish');
+    const infoBox = document.getElementById('infoBox');
+    const infos = [
+      "Thợ lặn xanh - đang khám phá đại dương",
+      "Thợ lặn đỏ - can đảm và tò mò",
+      "Thợ lặn xanh lá - yêu môi trường biển",
+      "Đàn cá nhỏ tung tăng bơi lội",
+      "Đàn cá vàng rực rỡ dưới ánh sáng",
+      "Cá mập - kẻ săn mồi oai phong",
+      "Rùa biển hiền lành và chậm rãi"
+    ];
+
+    fishes.forEach((fish, i) => {
+      // Vị trí ban đầu ngẫu nhiên
+      fish.style.top = Math.random() * window.innerHeight * 0.8 + 'px';
+      fish.style.left = Math.random() * window.innerWidth * 0.8 + 'px';
+
+      let direction = Math.random() < 0.5 ? 1 : -1;
+
+      // Chuyển động ngẫu nhiên
+      setInterval(() => {
+        let x = Math.random() * window.innerWidth * 0.9;
+        let y = Math.random() * window.innerHeight * 0.8;
+        fish.style.transform = `translate(${x}px, ${y}px) scaleX(${direction})`;
+        direction *= -1;
+      }, 4000 + Math.random() * 2000);
+
+      // Khi nhấp vào cá hiển thị thông tin
+      fish.addEventListener('click', () => {
+        infoBox.textContent = infos[i];
+        infoBox.style.display = 'block';
+        setTimeout(() => infoBox.style.display = 'none', 3000);
+      });
+    });
+  </script>
+  <script>
+  // Tạo bong bóng nhỏ nổi lên ngẫu nhiên
+  function createBubble() {
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+    const size = Math.random() * 8 + 4; // 4–12px
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.style.left = `${Math.random() * 100}vw`;
+    bubble.style.animationDuration = `${4 + Math.random() * 3}s`;
+    document.body.appendChild(bubble);
+
+    // Xóa bong bóng khi kết thúc
+    setTimeout(() => bubble.remove(), 7000);
+  }
+
+  // Tạo bong bóng mỗi 200ms
+  setInterval(createBubble, 200);
+</script>
+</body>
+</html>
+

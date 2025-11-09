@@ -1,0 +1,81 @@
+ body {
+      margin: 0;
+      overflow: hidden;
+      height: 100vh;
+      background: linear-gradient(to bottom, #006994 0%, #001f3f 100%);
+      position: relative;
+    }
+
+    /* Hiệu ứng ánh sáng mặt nước */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.2), transparent 60%),
+                  repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 6px);
+      animation: waveLight 10s infinite linear;
+      z-index: 0;
+    }
+
+    @keyframes waveLight {
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 1000px 0, 200px 0; }
+    }
+
+    
+
+    /* Cá */
+    .fish {
+      position: absolute;
+      width: 120px;
+      transition: transform 1s linear;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    /* Hộp thông tin */
+    .info-box {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.8);
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: none;
+      font-family: sans-serif;
+      z-index: 3;
+    }
+
+  body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    background: linear-gradient(to bottom, #0077b6 0%, #001f3f 100%);
+    position: relative;
+  }
+
+  /* Bong bóng nổi lên */
+  .bubble {
+    position: absolute;
+    bottom: -50px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: rise 6s linear infinite;
+    z-index: 3;
+  }
+
+  @keyframes rise {
+    0% {
+      transform: translateY(0) scale(0.4);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translateY(-110vh) scale(1);
+      opacity: 0;
+    }
+  }
+
