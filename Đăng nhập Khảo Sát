@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khảo sát thông tin cá nhân</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f9f9f9;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .form-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+            max-width: 400px;
+        }
+
+        input, select, textarea {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            width: 100%;
+            padding: 8px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: dodgerblue;
+            color: white;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        button:hover {
+            background-color: deepskyblue;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .loi {
+            background-color: yellow;
+            color: red;
+        }
+
+        #ketQua {
+            margin-top: 15px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-box" id="loginForm">
+        <h2>LOGIN</h2>
+        <div>
+            Username: <input id="username" placeholder="Nhập username" />
+        </div>
+        <div>
+            Password: <input id="password" type="password" placeholder="Nhập password" />
+        </div>
+        <button id="btnLogin" type="button">LOGIN</button>
+        <div id="message"></div>
+    </div>
+
+    <div class="form-box hidden" id="surveyForm">
+        <h2>KHẢO SÁT THÔNG TIN</h2>
+        <div>
+            Họ tên: <input id="hoTen" placeholder="Nhập họ tên">
+        </div>
+        <div>
+            Giới tính:
+            <label><input type="radio" name="gioiTinh" value="Nam"> Nam</label>
+            <label><input type="radio" name="gioiTinh" value="Nữ"> Nữ</label>
+        </div>
+        <div>
+            Ngày sinh: <input type="date" id="ngaySinh">
+        </div>
+        <div>
+            Sở thích:
+            <label><input type="checkbox" class="soThich" value="Đọc sách"> Đọc sách</label>
+            <label><input type="checkbox" class="soThich" value="Âm nhạc"> Âm nhạc</label>
+            <label><input type="checkbox" class="soThich" value="Du lịch"> Du lịch</label>
+            <label><input type="checkbox" class="soThich" value="Thể thao"> Thể thao</label>
+             <label><input type="checkbox" class="soThich" value="Xem alime"> Xem alime</label>
+             <label><input type="checkbox" class="soThich" value="Chơi game"> Chơi game</label>
+             <label><input type="checkbox" class="soThich" value="Nấu ăn"> Nấu ăn</label>
+        </div>
+        <div>
+            Nghề nghiệp:
+            <select id="ngheNghiep">
+                <option value="">--Chọn nghề nghiệp--</option>
+                <option value="Học sinh">Học sinh</option>
+                <option value="Sinh viên">Sinh viên</option>
+                <option value="Nhân viên">Nhân viên</option>
+                <option value="Khác">Khác</option>
+            </select>
+        </div>
+        <div>
+            Ghi chú: <textarea id="ghiChu" rows="3" placeholder="Nhập thêm ý kiến..."></textarea>
+        </div>
+        <button type="button" id="btnGui">GỬI KHẢO SÁT</button>
+        <button type="button" id="btnDangXuat" style="background:red">ĐĂNG XUẤT</button>
+
+        <div id="ketQua"></div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // ======= Xử lý đăng nhập =======
+            $("#btnLogin").click(function () {
+                let user = $("#username");
+                let pass = $("#password");
+
+                if (user.val().trim().length == 0 || pass.val().trim().length == 0) {
+                    $("#message").html('Chưa nhập username/password');
+                    user.addClass("loi");
+                    pass.addClass("loi");
+                    return;
+                }
+                $("#message").html('');
+                if (user.val().trim().length < 5 || pass.val().trim().length < 5) {
+                    $("#message").html('Sai thông tin đăng nhập');
+                    user.addClass("loi");
+                    pass.addClass("loi");
+                    return;
+                }
+
+                user.removeClass("loi");
+                pass.removeClass("loi");
+                $("#message").html('Đăng nhập thành công ✅');
+
+                $("#loginForm").hide(500);
+                $("#surveyForm").show(500);
+            });
+
+            // ======= Gửi khảo sát =======
+            $("#btnGui").click(function () {
+                let hoTen = $("#hoTen").val().trim();
+                let gioiTinh = $("input[name='gioiTinh']:checked").val();
+                let ngaySinh = $("#ngaySinh").val();
+                let nghe = $("#ngheNghiep").val();
+                let soThich = [];
+                $(".soThich:checked").each(function () {
+                    soThich.push($(this).val());
+                });
+                let ghiChu = $("#ghiChu").val().trim();
+
+                if (hoTen === "" || !gioiTinh || ngaySinh === "" || nghe === "") {
+                    alert("Vui lòng điền đầy đủ thông tin!");
+                    return;
+                }
+
+                let kq = `
+                    <p>Họ tên: <b>${hoTen}</b></p>
+                    <p>Giới tính: <b>${gioiTinh}</b></p>
+                    <p>Ngày sinh: <b>${ngaySinh}</b></p>
+                    <p>Nghề nghiệp: <b>${nghe}</b></p>
+                    <p>Sở thích: <b>${soThich.join(", ") || "Không có"}</b></p>
+                    <p>Ghi chú: ${ghiChu || "Không có"}</p>
+                `;
+
+                $("#ketQua").html(kq);
+            });
+
+            // ======= Đăng xuất =======
+            $("#btnDangXuat").click(function () {
+                $("#surveyForm").hide(500);
+                $("#loginForm").show(500);
+                $("#username, #password").val('');
+                $("#message").html('');
+            });
+        });
+    </script>
+</body>
+</html>
