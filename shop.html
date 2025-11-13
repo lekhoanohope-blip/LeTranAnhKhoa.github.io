@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LTAK SHOP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    .hh-box {
+      display: inline-block;
+      width: 220px;
+      border: 1px solid #ccc;
+      margin: 10px;
+      text-align: center;
+      border-radius: 8px;
+      transition: 0.3s;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .hh-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .hh-box img {
+      width: 180px;
+      height: 180px;
+      margin-top: 10px;
+    }
+    .hh-box-name {
+      font-weight: bold;
+      margin-top: 5px;
+      color: #007bff;
+    }
+    .hh-box-price {
+      color: red;
+      font-size: 18px;
+      margin: 5px 0;
+    }
+    .card a {
+      text-decoration: none;
+      color: black;
+    }
+    .card a:hover {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="hh-header text-center bg-success text-white p-3 mb-3">
+      <h1>LTAK SHOP</h1>
+      <h5>LTAK SHOP - MỌI THỨ BẠN CẦN</h5>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark mb-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Trang chủ</a>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Đăng nhập</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Đăng xuất</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="row">
+      <!-- Cột sản phẩm -->
+      <div class="col-lg-9" id="productArea">
+        <!-- Tivi -->
+        <div class="hh-box" data-category="tivi">
+          <img src="https://cdn2.cellphones.com.vn/x/media/catalog/product/t/i/tivi-xiaomi-qled-4k-a-pro-55-inch-2026.png?_gl=1*1hqbljo*_gcl_au*MTY1MjEwMzYwLjE3NjMwMzYxNzk.*_ga*NzQ3NjAxOTE5LjE3NjMwMzYxNzk.*_ga_QLK8WFHNK9*czE3NjMwMzYxNzgkbzEkZzEkdDE3NjMwMzc3MjIkajUxJGwwJGg3MzgyMjExNzg." alt="Tivi">
+          <div class="hh-box-name">Tivi Xiaomi A Pro 4K 55 inch QLED 2026</div>
+          <div class="hh-box-price">10.290.000₫</div>
+        </div>
+
+        <div class="hh-box" data-category="tivi">
+          <img src="https://cdn2.cellphones.com.vn/x/media/catalog/product/t/i/tivi-xiaomi-4k-a-65-inch-2026.png?_gl=1*te3hdi*_gcl_au*MTY1MjEwMzYwLjE3NjMwMzYxNzk.*_ga*NzQ3NjAxOTE5LjE3NjMwMzYxNzk.*_ga_QLK8WFHNK9*czE3NjMwMzYxNzgkbzEkZzEkdDE3NjMwMzc3OTEkajU0JGwwJGg3MzgyMjExNzg." alt="Tivi">
+          <div class="hh-box-name">Tivi Xiaomi A 4K 65 inch 2026</div>
+          <div class="hh-box-price">12.690.000₫</div>
+        </div>
+       <div class="hh-box" data-category="tivi">
+         <img src="https://cdn2.cellphones.com.vn/x/media/catalog/product/a/q/aqt43k800fg-2_1.png?_gl=1*1ffe52n*_gcl_au*MTY1MjEwMzYwLjE3NjMwMzYxNzk.*_ga*NzQ3NjAxOTE5LjE3NjMwMzYxNzk.*_ga_QLK8WFHNK9*czE3NjMwMzYxNzgkbzEkZzEkdDE3NjMwMzc2MDUkajUzJGwwJGg3MzgyMjExNzg." alt="Tivi">
+          <div class="hh-box-name">Android Tivi AQUA FHD 43 inch 2024 (AQT43K800FG)</div>
+          <div class="hh-box-price">5.790.000₫</div>
+        </div>
+         <div class="hh-box" data-category="tivi">
+         <img src="https://cdn2.cellphones.com.vn/x/media/catalog/product/s/m/smart-tivi-oled-samsung-83s95f-4k-83-inch.png?_gl=1*tq438a*_gcl_au*MTY1MjEwMzYwLjE3NjMwMzYxNzk.*_ga*NzQ3NjAxOTE5LjE3NjMwMzYxNzk.*_ga_QLK8WFHNK9*czE3NjMwMzYxNzgkbzEkZzEkdDE3NjMwMzY4NTEkajUxJGwwJGg3MzgyMjExNzg." alt="Tivi">
+          <div class="hh-box-name">Smart tivi Samsung OLED 4K 83 inch 2025 (83S95F)</div>
+          <div class="hh-box-price">104.990.000₫</div>
+        </div>
+         <div class="hh-box" data-category="tivi">
+         <img src="https://cdn2.cellphones.com.vn/x/media/catalog/product/t/v/tv-ss-55u8500f-uhd-4k-55_2__1.png?_gl=1*1yhktis*_gcl_au*MTY1MjEwMzYwLjE3NjMwMzYxNzk.*_ga*NzQ3NjAxOTE5LjE3NjMwMzYxNzk.*_ga_QLK8WFHNK9*czE3NjMwMzYxNzgkbzEkZzEkdDE3NjMwMzY5MTgkajQ5JGwwJGg3MzgyMjExNzg." alt="Tivi">
+          <div class="hh-box-name">Smart Tivi Samsung UHD 4K 55 inch 2025 (55U8500F)</div>
+          <div class="hh-box-price">10.490.000₫</div>
+        </div>
+         <div class="hh-box" data-category="tivi">
+         <img src="https://cdn2.cellphones.com.vn/x/media/catalog/product/s/m/smart-tivi-lg-oled-evo-97g4psa-4k-91-inch-2024_17__1_1_1_1_1.png?_gl=1*14a42ur*_gcl_au*MTY1MjEwMzYwLjE3NjMwMzYxNzk.*_ga*NzQ3NjAxOTE5LjE3NjMwMzYxNzk.*_ga_QLK8WFHNK9*czE3NjMwMzYxNzgkbzEkZzEkdDE3NjMwMzcwNjYkajU4JGwwJGg3MzgyMjExNzg." alt="Tivi">
+          <div class="hh-box-name">Smart Tivi LG LED 4K 55 inch 2024 (55UT8050)</div>
+          <div class="hh-box-price">9.690.000₫</div>
+        </div>
+
+        <!-- Điện thoại -->
+        <div class="hh-box" data-category="dienthoai">
+          <img src="https://cdn2.cellphones.com.vn/x/media/catalog/product/i/p/iphone-16-pro-max_1.png?_gl=1*2fmq0t*_gcl_au*MTY1MjEwMzYwLjE3NjMwMzYxNzk.*_ga*NzQ3NjAxOTE5LjE3NjMwMzYxNzk.*_ga_QLK8WFHNK9*czE3NjMwMzYxNzgkbzEkZzEkdDE3NjMwMzgxNTQkajMwJGwwJGg3MzgyMjExNzg." alt="iPhone">
+          <div class="hh-box-name">iPhone 16 Pro Max 512GB</div>
+          <div class="hh-box-price">36.890.000₫</div>
+        </div>
+        <div class="hh-box" data-category="dienthoai">
+          <img src="https://cdn2.cellphones.com.vn/x/media/catalog/product/i/p/iphone-17-pro-max_1_1.jpg?_gl=1*64ga4j*_gcl_au*MTY1MjEwMzYwLjE3NjMwMzYxNzk.*_ga*NzQ3NjAxOTE5LjE3NjMwMzYxNzk.*_ga_QLK8WFHNK9*czE3NjMwMzYxNzgkbzEkZzEkdDE3NjMwMzgyODYkajQyJGwwJGg3MzgyMjExNzg." alt="iPhone">
+          <div class="hh-box-name">iPhone 17 Pro Max 2TB</div>
+          <div class="hh-box-price">63.990.000₫</div>
+        </div>
+         <div class="hh-box" data-category="dienthoai">
+          <img src="https://www.duchuymobile.com/images/variant_image/81/oppo-reno14-pro-5g-trang_rfb4-vs.jpg" alt="Z Flip6">
+          <div class="hh-box-name">OPPO Reno14 Pro 5G</div>
+          <div class="hh-box-price">14.399.000₫</div>
+        </div>
+        <div class="hh-box" data-category="dienthoai">
+          <img src="https://cdn.viettablet.com/images/detailed/73/vivo-v60-lite-5g.jpg" alt="Vivo">
+          <div class="hh-box-name">Vivo V60 Lite 5G</div>
+          <div class="hh-box-price">10.490.000₫</div>
+        </div>
+        <div class="hh-box" data-category="dienthoai">
+          <img src="https://cdn2.cellphones.com.vn/x/media/catalog/product/d/i/dien-thoai-samsung-galaxy-a56.1_1.png?_gl=1*15thkrn*_gcl_au*MTY1MjEwMzYwLjE3NjMwMzYxNzk.*_ga*NzQ3NjAxOTE5LjE3NjMwMzYxNzk.*_ga_QLK8WFHNK9*czE3NjMwMzYxNzgkbzEkZzEkdDE3NjMwMzg1MTckajExJGwwJGg3MzgyMjExNzg." alt="Samsung">
+          <div class="hh-box-name">Samsung Galaxy A56 5G</div>
+          <div class="hh-box-price">9.110.000₫</div>
+        </div>
+        <div class="hh-box" data-category="dienthoai">
+          <img src="https://www.duchuymobile.com/images/detailed/85/realme-15t-bac.jpg" alt="Realme">
+          <div class="hh-box-name">Realme 15 Pro 5G</div>
+          <div class="hh-box-price">7.999.000₫</div>
+        </div>
+        
+        <!-- Laptop -->
+        <div class="hh-box" data-category="laptop">
+          <img src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/335963/acer-predator-helios-18-ai-ph18-73-98aq-ultra-9-nhqvwsv001-1-638781092544733939-750x500.jpg" alt="Laptop">
+          <div class="hh-box-name">Laptop Acer Gaming Predator Helios 18 AI PH18 73 98AQ - NH.QVWSV.001</div>
+          <div class="hh-box-price">149.990.000₫</div>
+        </div>
+
+        <div class="hh-box" data-category="laptop">
+          <img src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/335010/msi-titan-18-hx-ai-a2xwig-ultra-9-090vn-1-638763358814428553-750x500.jpg" alt="Laptop">
+          <div class="hh-box-name">Laptop MSI Gaming Titan 18 HX AI A2XWIG - 090VN</div>
+          <div class="hh-box-price">145.200.000₫</div>
+        </div>
+        <div class="hh-box" data-category="laptop">
+          <img src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/342722/hp-gaming-omen-max-16-ah0212tx-ultra-9-275hx-c1wr1pa-1-638931823498833215-750x500.jpg" alt="Laptop">
+          <div class="hh-box-name">Laptop MSI Gaming Titan 18 HX AI A2XWIG - 090VN</div>
+          <div class="hh-box-price">128.990.000₫</div>
+        </div>
+        <div class="hh-box" data-category="laptop">
+          <img src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/339542/lenovo-legion-pro-7-16iax10h-ultra-9-275hx-83f5008wvn-1-638859243143644179-750x500.jpg" alt="Laptop">
+          <div class="hh-box-name">Laptop Lenovo Gaming Legion Pro 7 16IAX10H - 83F5008WVN</div>
+          <div class="hh-box-price">94.990.000₫</div>
+        </div>
+        <div class="hh-box" data-category="laptop">
+          <img src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/337841/gigabyte-aorus-master-16-ultra-9-16-byhc5vne64sh-1-638826857934000685-750x500.jpg" alt="Laptop">
+          <div class="hh-box-name">Laptop GIGABYTE Gaming AORUS-MASTER-16-BYHC5VNE64SH</div>
+          <div class="hh-box-price">84.490.000₫</div>
+        </div>
+        <div class="hh-box" data-category="laptop">
+          <img src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/341567/dell-alienware-16-aurora-ac16250-core-9-270h-c9h321w11ii5070-new-1-638940630659711432-750x500.jpg" alt="Laptop">
+          <div class="hh-box-name">Laptop Dell Gaming Alienware 16 Aurora AC16250-C9H321W11II5070</div>
+          <div class="hh-box-price">63.990.000₫</div>
+        </div>
+
+        <!-- Tủ lạnh -->
+        <div class="hh-box" data-category="tulanh">
+          <img src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/1943/316700/tu-lanh-panasonic-inverter-621-lit-multi-door-nr-xy680ymmv-5-638819995690908780-700x467.jpg" alt="Tủ lạnh">
+          <div class="hh-box-name">Panasonic Inverter 621 lít PRIME+ Edition Multi Door NR-XY680YMMV</div>
+          <div class="hh-box-price">98.170.000₫</div>
+        </div>
+
+        <div class="hh-box" data-category="tulanh">
+          <img src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/1943/333436/tu-lanh-samsung-inverter-636-lit-multi-door-bespoke-rf65db990012sv-6-638704010125016331-700x467.jpg" alt="Tủ lạnh">
+          <div class="hh-box-name">Samsung Inverter 636 lít Multi Door Bespoke RF65DB990012SV</div>
+          <div class="hh-box-price">94.990.000₫</div>
+        </div>
+         <div class="hh-box" data-category="tulanh">
+          <img src="https://cdn.tgdd.vn/Products/Images/1943/329071/tu-lanh-hitachi-inverter-617-lit-multi-door-r-hw620rv-xk-2-1-700x467.jpg" alt="Tủ lạnh">
+          <div class="hh-box-name">Hitachi Inverter 617 lít Multi Door R-HW620RV XK</div>
+          <div class="hh-box-price">71.740.000₫</div>
+        </div>
+         <div class="hh-box" data-category="tulanh">
+          <img src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/1943/330170/tu-lanh-toshiba-inverter-533-lit-japandi-multi-door-gr-rf690wi-pgv-67-4-638646084456976322-700x467.jpg" alt="Tủ lạnh">
+          <div class="hh-box-name">Toshiba Inverter 533 lít Japandi Multi Door GR-RF690WI-PGV(67)</div>
+          <div class="hh-box-price">51.410.000₫</div>
+        </div>
+         <div class="hh-box" data-category="tulanh">
+          <img src="https://cdn.tgdd.vn/Products/Images/1943/316034/tu-lanh-lg-inverter-635-lit-side-by-side-instaview-door-in-door-gr-x257bg-10-700x467.jpg" alt="Tủ lạnh">
+          <div class="hh-box-name">LG Inverter 635 lít Side By Side InstaView Door-in-Door GR-X257BG</div>
+          <div class="hh-box-price">39.310.000₫</div>
+        </div>
+         <div class="hh-box" data-category="tulanh">
+          <img src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/1943/321948/tu-lanh-aqua-660-lit-aqr-m727xagsu1-4-638610676562142745-700x467.jpg" alt="Tủ lạnh">
+          <div class="hh-box-name"> Aqua Inverter 660 lít Multi Door AQR-M727XA(GS)U1</div>
+          <div class="hh-box-price">25.410.000₫</div>
+        </div>
+      </div>
+
+      <!-- Cột danh mục -->
+      <div class="col-lg-3">
+        <div class="card mt-2 mb-2">
+          <div class="card-header bg-success text-white">Danh mục</div>
+          <div class="card-body p-0">
+            <ul class="list-group">
+              <li class="list-group-item"><a href="#" class="filter" data-filter="all">Tất cả</a></li>
+              <li class="list-group-item"><a href="#" class="filter" data-filter="tivi">Tivi</a></li>
+              <li class="list-group-item"><a href="#" class="filter" data-filter="dienthoai">Điện thoại</a></li>
+              <li class="list-group-item"><a href="#" class="filter" data-filter="laptop">Laptop</a></li>
+              <li class="list-group-item"><a href="#" class="filter" data-filter="tulanh">Tủ lạnh</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center text-primary bg-light p-2 mt-3">
+      © 2025 - LTAK SHOP
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      $(".filter").click(function(e){
+        e.preventDefault();
+        let category = $(this).data("filter");
+        
+        if(category === "all"){
+          $(".hh-box").show();
+        } else {
+          $(".hh-box").hide();
+          $(`.hh-box[data-category='${category}']`).show();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
