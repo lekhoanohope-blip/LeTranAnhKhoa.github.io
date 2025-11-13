@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caro jQuery</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid red;
+            text-align: center;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        td:hover {
+            background-color: #ffeaea;
+        }
+
+        button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" id="btnShow">Show</button>
+    <button type="button" id="btnHide">Hide</button>
+    <button type="button" id="btnToggle">Toggle</button>
+    <button type="button" id="btnReset">Reset</button>
+
+    <table id="tblBanCo"></table>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            const size = 10; // Kích thước bàn cờ 10x10
+            const $tbl = $("#tblBanCo");
+
+            // ====== Tạo bàn cờ ======
+            for (let i = 0; i < size; i++) {
+                let row = "<tr>";
+                for (let j = 0; j < size; j++) {
+                    row += `<td data-row='${i}' data-col='${j}'></td>`;
+                }
+                row += "</tr>";
+                $tbl.append(row);
+            }
+
+            let gt = "X"; // Người chơi đầu tiên
+            let gameOver = false;
+
+            // ====== Các nút điều khiển ======
+            $("#btnShow").click(() => $tbl.show(500));
+            $("#btnHide").click(() => $tbl.hide(500));
+            $("#btnToggle").click(() => $tbl.toggle(500));
+            $("#btnReset").click(() => {
+                $("td").html("");
+                gameOver = false;
+                gt = "X";
+            });
+
+            // ====== Xử lý khi click ======
+            $("td").click(function () {
+                if (gameOver) return;
+
+                if ($(this).html() === "") {
+                    $(this).html(gt);
+                    const row = parseInt($(this).data("row"));
+                    const col = parseInt($(this).data("col"));
+
+                    if (kiemTraThang(row, col, gt)) {
+                        alert(`Người chơi ${gt} thắng!`);
+                        gameOver = true;
+                    } else {
+                        gt = gt === "X" ? "O" : "X"; // Đổi lượt
+                    }
+                }
+            });
+
+            // ====== Hàm kiểm tra thắng ======
+            function kiemTraThang(row, col, val) {
+                const directions = [
+                    { dr: 0, dc: 1 },  // ngang
+                    { dr: 1, dc: 0 },  // dọc
+                    { dr: 1, dc: 1 },  // chéo chính
+                    { dr: 1, dc: -1 }  // chéo phụ
+                ];
+
+                for (let dir of directions) {
+                    let count = 1;
+                    // kiểm tra 1 hướng
+                    count += demLienTiep(row, col, val, dir.dr, dir.dc);
+                    // kiểm tra hướng ngược lại
+                    count += demLienTiep(row, col, val, -dir.dr, -dir.dc);
+                    if (count >= 5) return true;
+                }
+                return false;
+            }
+
+            // ====== Hàm đếm liên tiếp ======
+            function demLienTiep(row, col, val, dr, dc) {
+                let dem = 0;
+                for (let step = 1; step < 5; step++) {
+                    const r = row + dr * step;
+                    const c = col + dc * step;
+                    const oCell = $(`td[data-row='${r}'][data-col='${c}']`);
+                    if (oCell.length && oCell.html() === val) {
+                        dem++;
+                    } else break;
+                }
+                return dem;
+            }
+        });
+    </script>
+</body>
+
+</html>
